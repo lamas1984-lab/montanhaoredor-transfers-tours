@@ -1,0 +1,35 @@
+{
+  "name": "montanhaoredor-transfers-tours",
+  "version": "0.1.0",
+  "description": "Site independente Transfers & Tours by MontanhAoRedor",
+  "private": true,
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "check": "tsc -b --pretty false",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.24.0",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@11.24.0",
+  "type": "module",
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.1.1",
+    "lucide-react": "^1.47.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.0",
+    "wouter": "^3.11.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "playwright-core": "^1.63.0"
+  }
+}
