@@ -24,6 +24,8 @@ const whatsappNumber = "351918859403";
 const emailAddress = "visit@montanhaoredor.com";
 const casaDoLagarUrl = "https://www.montanhaoredor.com";
 const localProductsUrl = "https://margaridaart-dawxjx6v.manus.space/";
+const localProductsImage = "https://d2xsxph8kpxj0f.cloudfront.net/310519663498256885/dAWXjX6v5XdV67bt7CLFiK/quadro_pinhal_lagoa_ac0473b5.jpg";
+const asset = (file: string) => `${import.meta.env.BASE_URL}assets/${file}`;
 
 function getInitialLanguage(): Lang {
   const params = new URLSearchParams(window.location.search);
@@ -100,7 +102,7 @@ export default function App() {
 
       <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
         <button className="brand-button" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="MontanhAoRedor — início">
-          <img src="/assets/montanhaoredor-logo.png" alt="MontanhAoRedor" />
+          <img src={asset("montanhaoredor-logo.png")} alt="MontanhAoRedor" />
           <span className="brand-descriptor">Transfers <i>&</i> Tours</span>
         </button>
 
@@ -126,7 +128,7 @@ export default function App() {
 
       <div className={`mobile-panel ${menuOpen ? "open" : ""}`} aria-hidden={!menuOpen}>
         <button className="close-button" onClick={() => setMenuOpen(false)} aria-label={t.close}><X size={24} /></button>
-        <img src="/assets/montanhaoredor-logo.png" alt="MontanhAoRedor" className="mobile-logo" />
+        <img src={asset("montanhaoredor-logo.png")} alt="MontanhAoRedor" className="mobile-logo" />
         <div className="mobile-links">
           {navItems.map((item, index) => (
             <button key={item.id} onClick={() => navigate(item.id)}><small>0{index + 1}</small>{item.label}<ChevronRight size={20} /></button>
@@ -138,7 +140,7 @@ export default function App() {
 
       <main>
         <section className="hero" aria-label="Transfers e tours privados">
-          <img className="hero-image" src="/assets/hero-montanha.webp" alt={t.hero.photoAlt} />
+          <img className="hero-image" src={asset("hero-montanha.webp")} alt={t.hero.photoAlt} />
           <div className="hero-shade" />
           <div className="hero-grid" />
           <div className="hero-content">
@@ -192,7 +194,7 @@ export default function App() {
 
         <section id="viagem" className="journey-section">
           <div className="journey-image-wrap">
-            <img src="/assets/airport-welcome-casual.webp" alt={t.journey.imageAlt} loading="lazy" />
+            <img src={asset("airport-welcome-casual.webp")} alt={t.journey.imageAlt} loading="lazy" />
             <div className="image-badge"><Luggage size={18} /><span>{t.proof[1].value}</span></div>
           </div>
           <div className="journey-content">
@@ -217,12 +219,12 @@ export default function App() {
               {t.comfort.points.map((point) => <span key={point}><Check size={15} />{point}</span>)}
             </div>
           </div>
-          <div className="comfort-image"><img src="/assets/private-comfort-forward.webp" alt={t.comfort.imageAlt} loading="lazy" /></div>
+          <div className="comfort-image"><img src={asset("private-comfort-forward.webp")} alt={t.comfort.imageAlt} loading="lazy" /></div>
         </section>
 
         <section id="percursos" className="routes-section">
           <div className="routes-visual">
-            <img src="/assets/tour-atlantico.webp" alt={t.routes.imageAlt} loading="lazy" />
+            <img src={asset("tour-atlantico.webp")} alt={t.routes.imageAlt} loading="lazy" />
             <div className="route-line" aria-hidden="true"><span /><span /><span /></div>
           </div>
           <div className="routes-content">
@@ -258,7 +260,7 @@ export default function App() {
         </section>
 
         <section className="artisan-section" aria-label={t.shop.label}>
-          <div className="artisan-mark" aria-hidden="true">✦</div>
+          <img className="artisan-image" src={localProductsImage} alt="Pinhal e Lagoa — Margarida Sequeira" loading="lazy" />
           <div className="artisan-copy">
             <p className="eyebrow">{t.shop.label}</p>
             <h2>{t.shop.title}</h2>
@@ -290,7 +292,7 @@ export default function App() {
 
       <footer>
         <div className="footer-brand">
-          <img src="/assets/montanhaoredor-logo.png" alt="MontanhAoRedor" />
+          <img src={asset("montanhaoredor-logo.png")} alt="MontanhAoRedor" />
           <div><strong>MontanhAoRedor</strong><span>Transfers & Tours</span></div>
         </div>
         <p>{t.footer.line}</p>

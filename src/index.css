@@ -141,7 +141,7 @@ blockquote { margin: 0; padding: 2.2rem; color: var(--brand-olive-dark); border-
 .availability-notice button { min-height: 44px; padding: .75rem 1rem; border: 1px solid rgba(245,240,232,.2); background: rgba(245,240,232,.05); color: rgba(245,240,232,.4); font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; cursor: not-allowed; }
 
 .artisan-section { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; padding: clamp(3rem, 6vw, 5.5rem) max(1.25rem, calc((100vw - 1240px) / 2)); background: #f8f5ee; border-top: 1px solid rgba(38,58,43,.12); }
-.artisan-mark { width: 64px; height: 64px; display: grid; place-items: center; border: 1px solid rgba(38,58,43,.25); color: var(--brand-teal); font: 400 2rem var(--font-heading); }
+.artisan-image { width: 112px; height: 112px; object-fit: cover; border: 1px solid rgba(38,58,43,.2); box-shadow: 0 12px 30px rgba(38,58,43,.12); }
 .artisan-copy .eyebrow { margin-bottom: .7rem; }
 .artisan-copy h2 { margin: 0; font-family: var(--font-heading); font-size: clamp(1.9rem, 3.5vw, 3.2rem); font-weight: 500; letter-spacing: -.025em; line-height: 1; }
 .artisan-copy > p:last-child { max-width: 780px; margin: .8rem 0 0; color: #5f665e; font-size: .86rem; line-height: 1.7; }
@@ -238,7 +238,7 @@ footer > p { text-align: center; }.footer-note { text-align: right; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .intro-main h2, .section-heading h2, .contact-card h2 { font-size: 2.55rem; }
   .artisan-section { grid-template-columns: 1fr; }
-  .artisan-mark { width: 54px; height: 54px; }
+  .artisan-image { width: 88px; height: 88px; }
   .artisan-link { grid-column: 1; }
 }
 

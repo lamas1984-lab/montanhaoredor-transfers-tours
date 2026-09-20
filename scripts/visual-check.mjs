@@ -2,13 +2,14 @@ import { chromium } from "playwright-core";
 
 const browser = await chromium.launch({ headless: true, executablePath: "/usr/bin/chromium", args: ["--no-sandbox"] });
 const results = {};
+const baseUrl = process.env.BASE_URL || "http://127.0.0.1:4173/";
 
 for (const viewport of [
   { name: "desktop", width: 1440, height: 900 },
   { name: "mobile", width: 390, height: 844 },
 ]) {
   const page = await browser.newPage({ viewport });
-  await page.goto("http://127.0.0.1:4173/", { waitUntil: "networkidle" });
+  await page.goto(baseUrl, { waitUntil: "networkidle" });
   await page.waitForTimeout(1000);
   await page.evaluate(async () => {
     for (let y = 0; y < document.body.scrollHeight; y += window.innerHeight / 2) {
@@ -66,8 +67,8 @@ for (const [name, result] of Object.entries(results)) {
   if (result.restrictedTerms) failures.push(`${name}: restricted vehicle terminology`);
   if (result.casaLink !== "https://www.montanhaoredor.com") failures.push(`${name}: Casa do Lagar link incorrect`);
   if (result.shopLink !== "_blank") failures.push(`${name}: MargaridaArt link incorrect`);
-  if (result.airportImage !== "/assets/airport-welcome-casual.webp") failures.push(`${name}: casual welcome image missing`);
-  if (result.comfortImage !== "/assets/private-comfort-forward.webp") failures.push(`${name}: forward-facing seats image missing`);
+  if (!result.airportImage?.endsWith("/assets/airport-welcome-casual.webp")) failures.push(`${name}: casual welcome image missing`);
+  if (!result.comfortImage?.endsWith("/assets/private-comfort-forward.webp")) failures.push(`${name}: forward-facing seats image missing`);
 }
 if (!results.mobile.menuOpen) failures.push("mobile: menu did not open");
 if (!results.desktop.englishHeadline.includes("Portugal begins")) failures.push("desktop: English switch failed");

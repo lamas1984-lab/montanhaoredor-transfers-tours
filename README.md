@@ -25,3 +25,9 @@ O projeto incorpora uma cópia do **MontanhAoRedor Brand Kit 1.0.0** em `src/bra
 ## Estado comercial
 
 O serviço encontra-se em preparação. O site permite apenas pedidos de informação por WhatsApp ou email; não cria nem confirma reservas.
+
+## Publicação
+
+O site é publicado automaticamente pelo GitHub Pages após cada atualização da branch `main`:
+
+`https://lamas1984-lab.github.io/montanhaoredor-transfers-tours/`
