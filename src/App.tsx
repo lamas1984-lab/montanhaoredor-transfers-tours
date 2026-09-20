@@ -23,6 +23,7 @@ const languages: Lang[] = ["pt", "en", "de", "nl"];
 const whatsappNumber = "351918859403";
 const emailAddress = "visit@montanhaoredor.com";
 const casaDoLagarUrl = "https://www.montanhaoredor.com";
+const localProductsUrl = "https://margaridaart-dawxjx6v.manus.space/";
 
 function getInitialLanguage(): Lang {
   const params = new URLSearchParams(window.location.search);
@@ -254,6 +255,18 @@ export default function App() {
             <div><h3>{t.fares.noticeTitle}</h3><p>{t.fares.noticeText}</p></div>
             <button disabled>{t.fares.noticeButton}</button>
           </div>
+        </section>
+
+        <section className="artisan-section" aria-label={t.shop.label}>
+          <div className="artisan-mark" aria-hidden="true">✦</div>
+          <div className="artisan-copy">
+            <p className="eyebrow">{t.shop.label}</p>
+            <h2>{t.shop.title}</h2>
+            <p>{t.shop.text}</p>
+          </div>
+          <a className="artisan-link" href={localProductsUrl} target="_blank" rel="noreferrer">
+            {t.shop.cta}<ExternalLink size={15} />
+          </a>
         </section>
 
         <section id="contacto" className="contact-section">

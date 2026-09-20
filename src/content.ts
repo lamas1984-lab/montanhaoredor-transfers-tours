@@ -13,6 +13,7 @@ export type SiteCopy = {
   fares: { label: string; title: string; intro: string; cards: Array<{ type: string; title: string; text: string; price: string }>; noticeTitle: string; noticeText: string; noticeButton: string };
   contact: { label: string; title: string; text: string; whatsapp: string; email: string; note: string };
   house: { label: string; title: string; text: string; cta: string };
+  shop: { label: string; title: string; text: string; cta: string };
   footer: { line: string; privacy: string };
   menu: string;
   close: string;
@@ -105,6 +106,7 @@ export const copy: Record<Lang, SiteCopy> = {
       note: "Informação apenas · sem confirmação de reserva",
     },
     house: { label: "Também na MontanhAoRedor", title: "Casa do Lagar", text: "Descubra o nosso alojamento de natureza em Alvados, no coração do Parque Natural Serra de Aire e Candeeiros.", cta: "Visitar o site da Casa" },
+    shop: { label: "Uma recomendação da nossa confiança", title: "Produtos locais, arte & handmade", text: "Conheça a MargaridaArt: um espaço de venda e promoção de arte, trabalhos handmade, produtos locais e escolhas selecionadas com atenção à origem, ao cuidado artesanal e à responsabilidade ambiental.", cta: "Visitar MargaridaArt" },
     footer: { line: `© ${new Date().getFullYear()} MontanhAoRedor · Transfers & Tours · Portugal`, privacy: "Viagens privadas, cuidado próximo." },
     menu: "Menu",
     close: "Fechar",
@@ -139,6 +141,7 @@ export const copy: Record<Lang, SiteCopy> = {
     ], noticeTitle: "Bookings are not open yet", noticeText: "We are preparing every operational and legal detail to launch the service to our quality standard. For now, you can request information and register interest; no booking will be created.", noticeButton: "Bookings temporarily closed" },
     contact: { label: "Contact", title: "Tell us how you imagine the journey.", text: "Share your origin, destination, approximate dates, number of passengers and what you would like to discover. We will reply with guidance, without obligation and without confirming bookings while the service is in preparation.", whatsapp: "Talk on WhatsApp", email: "Send email", note: "Information only · no booking confirmation" },
     house: { label: "Also by MontanhAoRedor", title: "Casa do Lagar", text: "Discover our nature accommodation in Alvados, at the heart of Parque Natural Serra de Aire e Candeeiros.", cta: "Visit the Casa website" },
+    shop: { label: "A trusted recommendation", title: "Local products, art & handmade work", text: "Discover MargaridaArt: a space presenting art, handmade work, local products and trusted choices selected with attention to origin, craftsmanship and environmental responsibility.", cta: "Visit MargaridaArt" },
     footer: { line: `© ${new Date().getFullYear()} MontanhAoRedor · Transfers & Tours · Portugal`, privacy: "Private journeys, personal care." },
     menu: "Menu", close: "Close",
   },
@@ -172,6 +175,7 @@ export const copy: Record<Lang, SiteCopy> = {
     ], noticeTitle: "Buchungen sind noch nicht geöffnet", noticeText: "Wir bereiten alle betrieblichen und rechtlichen Details vor, um den Service in der gewünschten Qualität zu starten. Sie können bereits Informationen anfragen und Interesse bekunden; es wird noch keine Buchung erstellt.", noticeButton: "Buchungen vorübergehend geschlossen" },
     contact: { label: "Kontakt", title: "Erzählen Sie uns von Ihrer Reise.", text: "Teilen Sie Ausgangspunkt, Ziel, ungefähre Daten, Anzahl der Reisenden und Ihre Wünsche mit. Wir antworten unverbindlich, ohne eine Buchung zu bestätigen, solange der Service vorbereitet wird.", whatsapp: "Über WhatsApp sprechen", email: "E-Mail senden", note: "Nur Information · keine Buchungsbestätigung" },
     house: { label: "Ebenfalls von MontanhAoRedor", title: "Casa do Lagar", text: "Entdecken Sie unsere Naturunterkunft in Alvados, im Herzen des Parque Natural Serra de Aire e Candeeiros.", cta: "Website der Casa besuchen" },
+    shop: { label: "Eine Empfehlung unseres Vertrauens", title: "Lokale Produkte, Kunst & Handarbeit", text: "Entdecken Sie MargaridaArt: Kunst, handgefertigte Arbeiten, lokale Produkte und sorgfältig ausgewählte Angebote mit Blick auf Herkunft, Handwerkskunst und Umweltverantwortung.", cta: "MargaridaArt besuchen" },
     footer: { line: `© ${new Date().getFullYear()} MontanhAoRedor · Transfers & Tours · Portugal`, privacy: "Private Reisen, persönliche Betreuung." },
     menu: "Menü", close: "Schließen",
   },
@@ -205,6 +209,7 @@ export const copy: Record<Lang, SiteCopy> = {
     ], noticeTitle: "Reserveringen zijn nog niet geopend", noticeText: "We bereiden alle operationele en wettelijke details voor om de dienst met onze gewenste kwaliteit te lanceren. U kunt al informatie aanvragen en interesse registreren; er wordt nog geen reservering gemaakt.", noticeButton: "Reserveringen tijdelijk gesloten" },
     contact: { label: "Contact", title: "Vertel ons hoe u de reis voor zich ziet.", text: "Deel vertrekpunt, bestemming, geschatte data, aantal passagiers en wat u wilt ontdekken. We antwoorden vrijblijvend en bevestigen geen reservering zolang de dienst in voorbereiding is.", whatsapp: "Praat via WhatsApp", email: "E-mail sturen", note: "Alleen informatie · geen reserveringsbevestiging" },
     house: { label: "Ook van MontanhAoRedor", title: "Casa do Lagar", text: "Ontdek onze natuuraccommodatie in Alvados, in het hart van Parque Natural Serra de Aire e Candeeiros.", cta: "Bezoek de website van de Casa" },
+    shop: { label: "Een vertrouwde aanbeveling", title: "Lokale producten, kunst & handmade werk", text: "Ontdek MargaridaArt: kunst, handmade werk, lokale producten en vertrouwde keuzes, geselecteerd met aandacht voor herkomst, vakmanschap en verantwoordelijkheid voor het milieu.", cta: "Bezoek MargaridaArt" },
     footer: { line: `© ${new Date().getFullYear()} MontanhAoRedor · Transfers & Tours · Portugal`, privacy: "Privéreizen, persoonlijke zorg." },
     menu: "Menu", close: "Sluiten",
   },

@@ -32,6 +32,7 @@ for (const viewport of [
     brokenImages: [...document.images].filter((image) => !image.complete || image.naturalWidth === 0).map((image) => image.getAttribute("src")),
     restrictedTerms: /volkswagen|id[ .-]?buzz|\bvw\b/i.test(document.body.innerText),
     casaLink: document.querySelector(".header-house-link")?.getAttribute("href"),
+    shopLink: document.querySelector(`a[href="https://margaridaart-dawxjx6v.manus.space/"]`)?.getAttribute("target"),
     airportImage: document.querySelector(".journey-image-wrap img")?.getAttribute("src"),
     comfortImage: document.querySelector(".comfort-image img")?.getAttribute("src"),
   }));
@@ -64,6 +65,7 @@ for (const [name, result] of Object.entries(results)) {
   if (result.brokenImages.length) failures.push(`${name}: broken images ${result.brokenImages.join(", ")}`);
   if (result.restrictedTerms) failures.push(`${name}: restricted vehicle terminology`);
   if (result.casaLink !== "https://www.montanhaoredor.com") failures.push(`${name}: Casa do Lagar link incorrect`);
+  if (result.shopLink !== "_blank") failures.push(`${name}: MargaridaArt link incorrect`);
   if (result.airportImage !== "/assets/airport-welcome-casual.webp") failures.push(`${name}: casual welcome image missing`);
   if (result.comfortImage !== "/assets/private-comfort-forward.webp") failures.push(`${name}: forward-facing seats image missing`);
 }
