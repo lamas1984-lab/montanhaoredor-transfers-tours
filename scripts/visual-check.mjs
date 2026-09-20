@@ -31,7 +31,7 @@ for (const viewport of [
     clientWidth: document.documentElement.clientWidth,
     brokenImages: [...document.images].filter((image) => !image.complete || image.naturalWidth === 0).map((image) => image.getAttribute("src")),
     restrictedTerms: /volkswagen|id[ .-]?buzz|\bvw\b/i.test(document.body.innerText),
-    casaLink: document.querySelector(".house-link-section")?.getAttribute("href"),
+    casaLink: document.querySelector(".header-house-link")?.getAttribute("href"),
     airportImage: document.querySelector(".journey-image-wrap img")?.getAttribute("src"),
     comfortImage: document.querySelector(".comfort-image img")?.getAttribute("src"),
   }));

@@ -109,6 +109,9 @@ export default function App() {
         </nav>
 
         <div className="header-actions">
+          <a className="header-house-link" href={casaDoLagarUrl} target="_blank" rel="noreferrer" aria-label={t.house.cta}>
+            <span>{t.house.title}</span><ExternalLink size={13} />
+          </a>
           <div className="language-switcher" aria-label="Idioma">
             {languages.map((language) => (
               <button key={language} className={lang === language ? "active" : ""} onClick={() => setLang(language)} aria-label={`Idioma ${flags[language]}`}>
@@ -270,14 +273,6 @@ export default function App() {
           </div>
         </section>
 
-        <a className="house-link-section" href={casaDoLagarUrl} target="_blank" rel="noreferrer">
-          <div>
-            <p className="eyebrow">{t.house.label}</p>
-            <h2>{t.house.title}</h2>
-            <p>{t.house.text}</p>
-          </div>
-          <span>{t.house.cta}<ExternalLink size={18} /></span>
-        </a>
       </main>
 
       <footer>
