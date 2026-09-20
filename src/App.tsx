@@ -5,6 +5,7 @@ import {
   Check,
   ChevronRight,
   Compass,
+  ExternalLink,
   Luggage,
   Mail,
   Map,
@@ -21,6 +22,7 @@ import { copy, flags, type Lang } from "./content";
 const languages: Lang[] = ["pt", "en", "de", "nl"];
 const whatsappNumber = "351918859403";
 const emailAddress = "visit@montanhaoredor.com";
+const casaDoLagarUrl = "https://www.montanhaoredor.com";
 
 function getInitialLanguage(): Lang {
   const params = new URLSearchParams(window.location.search);
@@ -126,6 +128,7 @@ export default function App() {
             <button key={item.id} onClick={() => navigate(item.id)}><small>0{index + 1}</small>{item.label}<ChevronRight size={20} /></button>
           ))}
           <button onClick={() => navigate("contacto")}><small>05</small>{t.nav.contact}<ChevronRight size={20} /></button>
+          <a href={casaDoLagarUrl} target="_blank" rel="noreferrer"><small>↗</small>{t.house.title}<ExternalLink size={18} /></a>
         </div>
       </div>
 
@@ -185,7 +188,7 @@ export default function App() {
 
         <section id="viagem" className="journey-section">
           <div className="journey-image-wrap">
-            <img src="/assets/airport-welcome.webp" alt={t.journey.imageAlt} loading="lazy" />
+            <img src="/assets/airport-welcome-casual.webp" alt={t.journey.imageAlt} loading="lazy" />
             <div className="image-badge"><Luggage size={18} /><span>{t.proof[1].value}</span></div>
           </div>
           <div className="journey-content">
@@ -210,7 +213,7 @@ export default function App() {
               {t.comfort.points.map((point) => <span key={point}><Check size={15} />{point}</span>)}
             </div>
           </div>
-          <div className="comfort-image"><img src="/assets/private-comfort.webp" alt={t.comfort.imageAlt} loading="lazy" /></div>
+          <div className="comfort-image"><img src="/assets/private-comfort-forward.webp" alt={t.comfort.imageAlt} loading="lazy" /></div>
         </section>
 
         <section id="percursos" className="routes-section">
@@ -266,6 +269,15 @@ export default function App() {
             <small>{t.contact.note}</small>
           </div>
         </section>
+
+        <a className="house-link-section" href={casaDoLagarUrl} target="_blank" rel="noreferrer">
+          <div>
+            <p className="eyebrow">{t.house.label}</p>
+            <h2>{t.house.title}</h2>
+            <p>{t.house.text}</p>
+          </div>
+          <span>{t.house.cta}<ExternalLink size={18} /></span>
+        </a>
       </main>
 
       <footer>

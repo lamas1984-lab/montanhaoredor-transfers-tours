@@ -31,6 +31,9 @@ for (const viewport of [
     clientWidth: document.documentElement.clientWidth,
     brokenImages: [...document.images].filter((image) => !image.complete || image.naturalWidth === 0).map((image) => image.getAttribute("src")),
     restrictedTerms: /volkswagen|id[ .-]?buzz|\bvw\b/i.test(document.body.innerText),
+    casaLink: document.querySelector(".house-link-section")?.getAttribute("href"),
+    airportImage: document.querySelector(".journey-image-wrap img")?.getAttribute("src"),
+    comfortImage: document.querySelector(".comfort-image img")?.getAttribute("src"),
   }));
 
   if (viewport.name === "mobile") {
@@ -60,6 +63,9 @@ for (const [name, result] of Object.entries(results)) {
   if (result.scrollWidth > result.clientWidth) failures.push(`${name}: horizontal overflow`);
   if (result.brokenImages.length) failures.push(`${name}: broken images ${result.brokenImages.join(", ")}`);
   if (result.restrictedTerms) failures.push(`${name}: restricted vehicle terminology`);
+  if (result.casaLink !== "https://www.montanhaoredor.com") failures.push(`${name}: Casa do Lagar link incorrect`);
+  if (result.airportImage !== "/assets/airport-welcome-casual.webp") failures.push(`${name}: casual welcome image missing`);
+  if (result.comfortImage !== "/assets/private-comfort-forward.webp") failures.push(`${name}: forward-facing seats image missing`);
 }
 if (!results.mobile.menuOpen) failures.push("mobile: menu did not open");
 if (!results.desktop.englishHeadline.includes("Portugal begins")) failures.push("desktop: English switch failed");
